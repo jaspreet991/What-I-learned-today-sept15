@@ -1,0 +1,22 @@
+description: greatest number smaller than or equal to the target element
+
+static int go(int [] num, int target){
+        int start = 0;
+        int end = num.length-1;
+        for(int i=0;i<num.length;i++){
+            int mid = start + (end-start)/2;
+            if(target==num[mid]){
+                return target;
+            }
+            if(target>num[mid]){
+                start = mid+1;
+            }
+            if(target<num[mid]){
+                end = mid-1;
+            }
+        }
+return num[start];
+
+
+
+    }
